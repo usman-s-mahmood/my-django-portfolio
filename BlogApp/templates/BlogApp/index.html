@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Usman Shahid - Full Stack Web Developer Portfolio Website</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Full Stack Website Development for Local Businesses" name="keywords">
+        <meta content="Full Stack Website Developer and SEO Expert" name="description">
+
+        <!-- Favicon -->
+        <link href="/static/BlogApp/img/hero.jpg" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="/static/BlogApp/lib/slick/slick.css" rel="stylesheet">
+        <link href="/static/BlogApp/lib/slick/slick-theme.css" rel="stylesheet">
+        <link href="/static/BlogApp/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="/static/BlogApp/css/style.css" rel="stylesheet">
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="51">
+        <div class="wrapper">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <img src="/static/BlogApp/img/profile-pic.jpg" alt="Image">
+                </div>
+                <div class="sidebar-content">
+                    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                        <a href="/" class="navbar-brand">Usman Shahid</a>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#header">Home<i class="fa fa-home"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#about">About<i class="fa fa-address-card"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#experience">Skills and Expertise<i class="fa fa-star"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#service">Service<i class="fa fa-tasks"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#portfolio">Portfolio<i class="fa fa-file-archive"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#contact">Contact<i class="fa fa-envelope"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="sidebar-footer">
+                    {% comment %} <a href="#"><i class="fab fa-twitter"></i></a> {% endcomment %}
+                    {% comment %} <i class="fa fa-envelope" aria-hidden="true"></i> {% endcomment %}
+                    <a href="mailto:usmanshahid027@outlook.com"><i class="fab fa fa-envelope"></i></a>
+                    <a href="https://github.com/usman-s-mahmood"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/usman-shahid-mahmood"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="content">
+                <!-- Header Start -->
+                {% if messages %}
+                    <div class="container text-center">
+                    {% for message in messages %}
+                        <div class="alert alert-{% if message.tags == 'success' %}primary{%else%}{{message.tags}}{% endif %} alert-dismissible container fade show" role="alert">
+                            <strong>{{message|safe}}</strong> 
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+                <div class="header" id="header">
+                    <div class="row p-5">
+                        <div class="container"> </div>
+                        <div class="col-md-6 ">
+                            {% comment %} <p>I'm</p> {% endcomment %}
+                            <h1 class="mt-5">I'm <span class="text-green">Usman </span> <span class="text-red">Shahid</span> </h1>
+                            <h2></h2>
+                            <span>
+                                <div class="typed-text">Full Stack Developer, ASP.NET Core Developer, Python Developer, Django Developer, Data Analyst, SEO Expert, Linux Expert</div>
+                            </span>
+                        </div>
+                        <div class="col-md-6"><img src="/static/BlogApp/img/hero.jpg" alt="" class="img-fluid" width="320px"></div>
+                    </div>
+                </div>
+                <!-- Header End -->
+                {% comment "" %}
+                <script>
+                    const images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // List of image URLs
+                    const intervalTime = 5000; // 5 seconds
+
+                    let currentIndex = 0;
+
+                    function changeBackgroundImage() {
+                        const imageUrl = images[currentIndex];
+                        const element = document.querySelector('.header .content-inner');
+                        element.style.backgroundImage = `url(${imageUrl})`;
+                        
+                        currentIndex++;
+                        if (currentIndex >= images.length) {
+                            currentIndex = 0;
+                        }
+                    }
+
+                    // Call the function initially
+                    changeBackgroundImage();
+
+                    // Set interval to change image every 5 seconds
+                    setInterval(changeBackgroundImage, intervalTime);
+                </script> {% endcomment %}
+                
+                <!-- Large Button Start -->
+                <div class="large-btn">
+                    <div class="content-inner">
+                        <a class="btn" href="/static/utils/UsmanShahidWebDeveloperResume.pdf"><i class="fa fa-download"></i>Resume</a>
+                        <a class="btn" href="#contact"><i class="fa fa-hands-helping"></i>Hire Me</a>
+                    </div>
+                </div>
+                <!-- Large Button End -->
+                
+                <!-- About Start -->
+                <div class="about" id="about">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>About Me</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6 col-lg-5">
+                                <img src="/static/BlogApp/img/profile-pic.jpg" alt="Image">
+                            </div>
+                            <div class="col-md-6 col-lg-7">
+                                <p>
+                                    Dedicated computer science enthusiast committed to continuous learning and skill refinement. Proficient in Python and its frameworks such as Flask and Django, adept at leveraging advanced concepts to engineer sophisticated solutions. Eager to embrace new challenges and stay aware of emerging technologies to drive innovation and excellence in software development.
+                                </p>
+                                <a class="btn" href="#contact">Hire Me</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {% comment "" %}
+                            <div class="col-md-6">
+                                <div class="skills">
+                                    <div class="skill-name">
+                                        <p>Design</p><p>85%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="skill-name">
+                                        <p>SEO</p><p>95%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="skills">
+                                    <div class="skill-name">
+                                        <p>Development</p><p>90%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="skill-name">
+                                        <p>Marketing</p><p>85%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <!-- About End -->
+                
+                <!-- Education Start -->
+                {% comment "" %}
+                <div class="education" id="education">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Education</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
+                                    <h3>Master Degree</h3>
+                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
+                                    <h3>Bachelor Degree</h3>
+                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
+                                    <h3>Associate Degree</h3>
+                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
+                                    <h3>High School</h3>
+                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endcomment %}
+                <!-- Education Start -->
+                <div class="education" id="education">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Skills and Expertise</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    {% comment %} <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span> {% endcomment %}
+                                    <h3>Python Programming for backend development</h3>
+                                    <p>Python expert with grip on python frameworks like django and flask which offer robust and quality backend design with scalability and is compatible with all niches</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    {% comment %} <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span> {% endcomment %}
+                                    <h3>Javascript programming for front end development</h3>
+                                    <p>Vanilla Javascript expert for front end designing, firm grip on front end frameworks like TailwindCSS, React, Bootstrap and BulmaCSS</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    {% comment %} <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span> {% endcomment %}
+                                    <h3>MySQL Databases</h3>
+                                    <p>Expert in MySQL databases including both oracle, postgres SQL and SQLite3 databases. Familiarity with NoSQL databases like MongoDB</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="edu-col">
+                                    {% comment %} <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span> {% endcomment %}
+                                    <h3>Data Analysis</h3>
+                                    <p>Expert in Data analysis with python frameworks like numpy, openpyxl, pandas and matplotlib which offer better quality and quick data analysis </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Experience Start -->
+                {% comment "" %}
+                <div class="experience" id="experience">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Experience</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="exp-col">
+                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
+                                    <h3>Codex Solution</h3>
+                                    <h4>San Francisco, CA</h4>
+                                    <h5>Project Manager</h5>
+                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="exp-col">
+                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
+                                    <h3>Soft Solution Ltd</h3>
+                                    <h4>San Francisco, CA</h4>
+                                    <h5>Web Developer</h5>
+                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="exp-col">
+                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
+                                    <h3>ABC Soft Ltd</h3>
+                                    <h4>San Francisco, CA</h4>
+                                    <h5>Web Designer</h5>
+                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="exp-col">
+                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
+                                    <h3>Soft Agency</h3>
+                                    <h4>San Francisco, CA</h4>
+                                    <h5>Graphic Designer</h5>
+                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endcomment %}
+                <!-- Experience End -->
+                
+                <!-- Service Start -->
+                <div class="service" id="service">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Service</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="srv-col">
+                                    <i class="fa fa-desktop"></i>
+                                    <h3>Website Design</h3>
+                                    <p>Get the best quality front end designing services for your existing or new website with the most latest front end frameworks that provide a fresh and unique look to your site with the stability and enhanced performance</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="srv-col">
+                                    <i class="fa fa-laptop"></i>
+                                    <h3>Full Stack Website Development</h3>
+                                    <p>Get a custom Website developed with the most powerful backend in either django or flask that provides you and your business with a strong online presence</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="srv-col">
+                                    <i class="fa fa-search"></i>
+                                    <h3>Search Engine Optimization</h3>
+                                    <p>Rank your business on the Google SERP and get more authentic business leads. Rank number one on google business index and in your locality to get more local clients</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="srv-col">
+                                    <i class="fa fa-envelope-open-text"></i>
+                                    <h3>Digital Marketing</h3>
+                                    <p>Get the best quality digital marketing that suits your budget and gives a boost to your business. I can provide you with services like Google Adsense management, Pay per Click ads, Facebook Ads, Reviews and Reputation Management and Social Media Management</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Start -->
+                
+                <!-- Portfolio Start -->
+                <div class="portfolio" id="portfolio">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Portfolio</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>Take a look at my best quality portfolio projects</p>
+                                {% comment "" %}
+                                <ul id="portfolio-flters">
+                                    <li data-filter="*" class="filter-active">All</li>
+                                    <li data-filter=".web-des">Design</li>
+                                    <li data-filter=".web-dev">Development</li>
+                                    <li data-filter=".dig-mar">Marketing</li>
+                                </ul>
+                                {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="row portfolio-container">
+                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="/static/BlogApp/img/prt-5.png" class="img-fluid" alt="">
+                                        <a href="/static/BlogApp/img/prt-5.png" data-lightbox="portfolio" data-title="Project Name" class="link-preview" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a target="_blank" href="https://upwavebuilders.pythonanywhere.com" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a class="portfolio-title" target="_blank" href="https://upwavebuilders.pythonanywhere.com">Upwave Builders <span>Full Stack Django Website</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="/static/BlogApp/img/prt-6.png" class="img-fluid" alt="">
+                                        <a href="/static/BlogApp/img/prt-6.png" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a target="_blank" href="https://codevoyage.pythonanywhere.com" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a target="_blank" class="portfolio-title" href="https://codevoyage.pythonanywhere.com">Code Voyage  <span>Full Stack Django Website</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-dev">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="/static/BlogApp/img/prt-1.png" class="img-fluid" alt="">
+                                        <a href="/static/BlogApp/img/prt-1.png" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a target="_blank" href="https://henessyhairsalon.pythonanywhere.com" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a target="_blank" class="portfolio-title" href="https://henessyhairsalon.pythonanywhere.com">Henessy Hair Salon <span>Full Stack Flask Website</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item web-dev">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="/static/BlogApp/img/prt-2.png" class="img-fluid" alt="">
+                                        <a href="/static/BlogApp/img/prt-2.png" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a target="_blank" href="https://wellickconstructionsagency.pythonanywhere.com" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a target="_blank" class="portfolio-title" href="https://wellickconstructionsagency.pythonanywhere.com">Wellick Construction Agency <span>Full Stack Flask Website</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item dig-mar">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="/static/BlogApp/img/prt-3.png" class="img-fluid" alt="">
+                                        <a href="/static/BlogApp/img/prt-3.png" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a target="_blank" href="https://swiftdriveacademy.pythonanywhere.com" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a target="_blank" class="portfolio-title" href="https://swiftdriveacademy.pythonanywhere.com">Swift Drive Academy <span>Full Stack Flask Website</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 portfolio-item dig-mar">
+                                <div class="portfolio-wrap">
+                                    <figure>
+                                        <img src="/static/BlogApp/img/prt-4.png" class="img-fluid" alt="">
+                                        <a href="/static/BlogApp/img/prt-4.png" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
+                                        <a target="_blank" href="https://novadentistrystudio.pythonanywhere.com" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a target="_blank" class="portfolio-title" href="https://novadentistrystudio.pythonanywhere.com">Nova Dentistry Studio <span>Full Stack Flask Website</span></a>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Start -->
+                
+                <!-- Review Start -->
+                <div class="review" id="review">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Review</h2>
+                        </div>
+                        <div class="row align-items-center review-slider">
+                            <div class="col-md-12">
+                                <div class="review-slider-item">
+                                    <div class="review-text">
+                                        <p>
+                                            Working with Usman was a game-changer for our business. Their expertise in website development truly shines through in the exceptional website they delivered. From the sleek design to the seamless functionality, every aspect of our new site exceeded our expectations. Usman was responsive, professional, and went above and beyond to ensure our vision was brought to life. Highly recommend!
+                                        </p>
+                                    </div>
+                                    <div class="review-img">
+                                        <img src="/static/BlogApp/img/review-1.jpg" alt="Image">
+                                        <div class="review-name">
+                                            <h3>Thomas Anderson</h3>
+                                            <p>Roofing Business Owner</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="review-slider-item">
+                                    <div class="review-text">
+                                        <p>
+                                            We hired Usman to revamp our outdated website, and we were very happy with the results. Throughout the entire process, Usman was incredibly responsive, communicative, and professional. He took the time to understand our needs and preferences, and the end product reflects that perfectly. Our new website not only looks fantastic but also functions seamlessly. It's been a pleasure working with Usman and we highly recommend his services.
+                                        </p>
+                                    </div>
+                                    <div class="review-img">
+                                        <img src="/static/BlogApp/img/review-2.jpg" alt="Image">
+                                        <div class="review-name">
+                                            <h3>Sandra Albert</h3>
+                                            <p>Salon Owner</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="review-slider-item">
+                                    <div class="review-text">
+                                        <p>
+                                            We are thrilled with the website Usman developed for our small business. Their expertise and attention to detail were evident from the start. They took the time to understand our industry and target audience, resulting in a website that truly speaks to our brand. The design is modern and user-friendly, and we've already received numerous compliments from clients. Throughout the project, Usman was professional, accommodating, and a pleasure to work with. We will definitely be returning for future projects!
+                                        </p>
+                                    </div>
+                                    <div class="review-img">
+                                        <img src="/static/BlogApp/img/review-3.jpg" alt="Image">
+                                        <div class="review-name">
+                                            <h3>Scott Chen</h3>
+                                            <p>Restaurant Owner</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review End -->
+                
+                <!-- Contact Start -->
+                <div class="contact" id="contact">
+                    <div class="content-inner">
+                        <div class="content-header">
+                            <h2>Contact</h2>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="contact-info">
+                                    <p><i class="fa fa-user"></i>Usman Shahid</p>
+                                    <p><i class="fa fa-tag"></i>Full Stack Website Developer</p>
+                                    <p><i class="fa fa-envelope"></i><a href="mailto:usmanshahid027@outlook.com">usmanshahid027@outlook.com</a></p>
+                                    {% comment %} <p><i class="fa fa-phone"></i><a href="tel:+1234567890">+123-456-7890</a></p> {% endcomment %}
+                                    {% comment %} <p><i class="fa fa-map-marker"></i>123 Street, Los Angeles, CA, USA</p> {% endcomment %}
+                                    <div class="social">
+                                        <a class="btn" href="https://github.com/usman-s-mahmood/"><i class="fab fa-github"></i></a>
+                                        <a class="btn" href="https://www.linkedin.com/in/usman-shahid-mahmood/"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form">
+                                    <form action="/contact" method=POST>
+                                        {% csrf_token %}
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <input type="text" name="name" class="form-control" placeholder="Your Name" />
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <input type="email" name="email" class="form-control" placeholder="Your Email" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="subject" class="form-control" placeholder="Subject" />
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+                                        </div>
+                                        <div><button class="btn" type="submit">Send Message</button></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact End -->
+                
+                <!-- Footer Start -->
+                <div class="footer">
+                    <div class="content-inner">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <p class="text-white">&copy; Copyright <a class="text-white" href="mailto:usmanshahid027@outlook.com"></a>. All Rights Reserved <span id="year-tag"></span></p>
+                            </div>
+                            <script>
+                                document.getElementById('year-tag').innerHTML = new Date().getFullYear();
+                            </script>
+                            <div class="col-md-6">
+                                <p class="text-white">Developed By: <a class="text-white" href="mailto:usmanshahid027@outlook.com">Usman Shahid</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Start -->
+            </div>
+        </div>
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/BlogApp/lib/easing/easing.min.js"></script>
+        <script src="/static/BlogApp/lib/slick/slick.min.js"></script>
+        <script src="/static/BlogApp/lib/typed/typed.min.js"></script>
+        <script src="/static/BlogApp/lib/waypoints/waypoints.min.js"></script>
+        <script src="/static/BlogApp/lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="/static/BlogApp/lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- Template Javascript -->
+        <script src="/static/BlogApp/js/main.js"></script>
+    </body>
+</html>

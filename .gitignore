@@ -1,0 +1,13 @@
+
+# vs code temps
+.vscode/
+
+# virtual envs
+virt/
+venv/
+
+# my temps
+misc/
+
+# sensitive files
+secrets.json
