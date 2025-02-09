@@ -16,8 +16,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+import django.conf.urls as conf_urls
+import BlogApp.views as blog_views
+from django.conf.urls.static import static
+from django.conf import settings
+import os
+import json
+OS_BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SECRETS_FILE = os.path.join(OS_BASE_DIR, "secrets.json")
+
+with open(SECRETS_FILE) as file:
+    secrets = json.load(file)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path(f"{secrets["admin_route"]}/", admin.site.urls),
     path("", include("BlogApp.urls"), name='blog-urls')
-]
+] + static(
+    settings.MEDIA_URL,
+    document_root=settings.MEDIA_ROOT,
+)
+
+
+conf_urls.handler400 = blog_views.custom_404

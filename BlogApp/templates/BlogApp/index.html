@@ -46,7 +46,7 @@
                                     <a class="nav-link" href="#about">About<i class="fa fa-address-card"></i></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#experience">Skills and Expertise<i class="fa fa-star"></i></a>
+                                    <a class="nav-link" href="#education">Skills and Expertise<i class="fa fa-star"></i></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#service">Service<i class="fa fa-tasks"></i></a>
@@ -89,42 +89,16 @@
                             <h1 class="mt-5">I'm <span class="text-green">Usman </span> <span class="text-red">Shahid</span> </h1>
                             <h2></h2>
                             <span>
-                                <div class="typed-text">Full Stack Developer, ASP.NET Core Developer, Python Developer, Django Developer, Data Analyst, SEO Expert, Linux Expert</div>
+                                <div class="typed-text">Full Stack Developer, ASP.NET Core Developer, Python Developer, Django Developer, Data Analyst, MERN Developer, SEO Expert, Linux Expert, Active Directory Expert</div>
                             </span>
                         </div>
                         <div class="col-md-6"><img src="/static/BlogApp/img/hero.jpg" alt="" class="img-fluid" width="320px"></div>
                     </div>
                 </div>
-                <!-- Header End -->
-                {% comment "" %}
-                <script>
-                    const images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // List of image URLs
-                    const intervalTime = 5000; // 5 seconds
 
-                    let currentIndex = 0;
-
-                    function changeBackgroundImage() {
-                        const imageUrl = images[currentIndex];
-                        const element = document.querySelector('.header .content-inner');
-                        element.style.backgroundImage = `url(${imageUrl})`;
-                        
-                        currentIndex++;
-                        if (currentIndex >= images.length) {
-                            currentIndex = 0;
-                        }
-                    }
-
-                    // Call the function initially
-                    changeBackgroundImage();
-
-                    // Set interval to change image every 5 seconds
-                    setInterval(changeBackgroundImage, intervalTime);
-                </script> {% endcomment %}
-                
-                <!-- Large Button Start -->
                 <div class="large-btn">
                     <div class="content-inner">
-                        <a class="btn" href="/static/utils/UsmanShahidWebDeveloperResume.pdf"><i class="fa fa-download"></i>Resume</a>
+                        <a class="btn" target="_blank" href="/static/utils/UsmanShahidFullStackWebDevResume.pdf"><i class="fa fa-download"></i>Resume</a>
                         <a class="btn" href="#contact"><i class="fa fa-hands-helping"></i>Hire Me</a>
                     </div>
                 </div>
@@ -265,57 +239,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Experience Start -->
-                {% comment "" %}
-                <div class="experience" id="experience">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Experience</h2>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                    <h3>Codex Solution</h3>
-                                    <h4>San Francisco, CA</h4>
-                                    <h5>Project Manager</h5>
-                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                    <h3>Soft Solution Ltd</h3>
-                                    <h4>San Francisco, CA</h4>
-                                    <h5>Web Developer</h5>
-                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                    <h3>ABC Soft Ltd</h3>
-                                    <h4>San Francisco, CA</h4>
-                                    <h5>Web Designer</h5>
-                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i> 31-Dec-2050</span>
-                                    <h3>Soft Agency</h3>
-                                    <h4>San Francisco, CA</h4>
-                                    <h5>Graphic Designer</h5>
-                                    <p>Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endcomment %}
-                <!-- Experience End -->
-                
-                <!-- Service Start -->
                 <div class="service" id="service">
                     <div class="content-inner">
                         <div class="content-header">
@@ -364,14 +287,6 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <p>Take a look at my best quality portfolio projects</p>
-                                {% comment "" %}
-                                <ul id="portfolio-flters">
-                                    <li data-filter="*" class="filter-active">All</li>
-                                    <li data-filter=".web-des">Design</li>
-                                    <li data-filter=".web-dev">Development</li>
-                                    <li data-filter=".dig-mar">Marketing</li>
-                                </ul>
-                                {% endcomment %}
                             </div>
                         </div>
                         <div class="row portfolio-container">
@@ -389,10 +304,10 @@
                             <div class="col-lg-4 col-md-6 portfolio-item web-des">
                                 <div class="portfolio-wrap">
                                     <figure>
-                                        <img src="/static/BlogApp/img/prt-6.png" class="img-fluid" alt="">
+                                        <img src="/static/BlogApp/img/hire-stream.png" class="img-fluid" alt="">
                                         <a href="/static/BlogApp/img/prt-6.png" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
-                                        <a target="_blank" href="https://codevoyage.pythonanywhere.com" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
-                                        <a target="_blank" class="portfolio-title" href="https://codevoyage.pythonanywhere.com">Code Voyage  <span>Full Stack Django Website</span></a>
+                                        <a target="_blank" href="https://hstream.bsite.net" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+                                        <a target="_blank" class="portfolio-title" href="https://hstream.bsite.net">Hire Stream  <span>Full Stack ASP.NET Project</span></a>
                                     </figure>
                                 </div>
                             </div>

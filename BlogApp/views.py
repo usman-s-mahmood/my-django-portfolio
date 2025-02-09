@@ -62,3 +62,7 @@ def contact(request):
             # print(form.errors)
             return redirect('/')
     return redirect('/')
+
+def custom_404(request, exception):
+    messages.error(request, "Resource Not Found")
+    return redirect("home")
