@@ -37,4 +37,4 @@ urlpatterns = [
 )
 
 
-conf_urls.handler400 = blog_views.custom_404
+conf_urls.handler404 = blog_views.custom_404
