@@ -64,5 +64,8 @@ def contact(request):
     return redirect('/')
 
 def custom_404(request, exception):
-    messages.warning(request, "Resource Not Found")
+    messages.warning(
+        request, 
+        "Resource Not Found"
+    )
     return redirect("/")

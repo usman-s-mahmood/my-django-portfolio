@@ -72,7 +72,7 @@
             <div class="content">
                 <!-- Header Start -->
                 {% if messages %}
-                    <div class="container text-center">
+                    <div class="text-center">
                     {% for message in messages %}
                         <div class="alert alert-{% if message.tags == 'success' %}primary{%else%}{{message.tags}}{% endif %} alert-dismissible container fade show" role="alert">
                             <strong>{{message|safe}}</strong> 
